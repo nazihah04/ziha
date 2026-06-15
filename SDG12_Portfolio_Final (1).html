@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>e-Portfolio - SDG12</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+html { scroll-behavior: smooth; }
+body { line-height: 1.6; background: #faf7f0; color: #4a3b1a; }
+header { background: linear-gradient(135deg, #BF8B2E, #D9A441, #A8791F); color: white; padding: 2rem; text-align: center; }
+nav { position: sticky; top: 0; background: #8C6A1D; display: flex; justify-content: center; flex-wrap: wrap; z-index: 1000; }
+nav a { color: white; padding: 1rem; text-decoration: none; font-weight: bold; transition: 0.3s; }
+nav a:hover { background: #BF8B2E; }
+section { padding: 3rem 1.5rem; max-width: 1100px; margin: auto; }
+h2 { margin-bottom: 1rem; color: #BF8B2E; }
+.card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+iframe { width: 100%; height: 315px; border-radius: 10px; margin-top: 1rem; }
+.github-btn { display: inline-block; margin-top: 1rem; padding: 0.6rem 1rem; background: #BF8B2E; color: white; border-radius: 6px; text-decoration: none; }
+.github-btn:hover { background: #A8791F; }
+footer { text-align: center; padding: 2rem; background: #8C6A1D; color: white; margin-top: 2rem; }
+.intro-box { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+.tag { display: inline-block; padding: 0.3rem 0.7rem; background: #BF8B2E; color: white; border-radius: 20px; margin-top: 0.5rem; font-size: 0.8rem; }
+
+.profile-section{display:flex;align-items:center;gap:35px;flex-wrap:wrap;}
+.profile-image img{
+width:230px;height:230px;object-fit:cover;
+border-radius:20px;
+border:5px solid #BF8B2E;
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+.profile-info{flex:1;}
+.intro-box{border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,0.08);}
+.card{transition:all .3s ease;}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 25px rgba(0,0,0,0.12);}
+h2{border-left:5px solid #BF8B2E;padding-left:12px;}
+
+</style>
+</head>
+<body>
+<header id="home">
+<h1>Nurul Nazihah's e-Portfolio</h1>
+<p>Software Engineering | SDG 12 - Responsible Consumption & Production</p>
+</header>
+<nav>
+<a href="#home">Home</a>
+<a href="#labs">Labs</a>
+<a href="#projects">Projects</a>
+<a href="#reflection">Reflection</a>
+<a href="#skills">Skills</a>
+<a href="#resources">Resources</a>
+</nav>
+<section id="home">
+<div class="intro-box profile-section">
+<div class="profile-image">
+<img src="images/profile.jpg" alt="Profile Picture">
+</div>
+<div class="profile-info">
+<h2>Student Information</h2>
+<p><strong>Name:</strong> NURUL NAZIHAH BINTI ABDUL AZIZ</p>
+<p><strong>Matric No:</strong> A210066</p>
+<p><strong>Programme:</strong> SOFTWARE ENGINEERING</p>
+<p><strong>Instructor:</strong> DR. NAZATUL AINI</p>
+<p class="tag">SDG 12 : Responsible Consumption and Production</p>
+<h3 style="margin-top:1rem;">Introduction</h3>
+<p>
+    This report documents the completion of five Android application development labs, covering essential concepts such as user interface design, user interaction, Material Design implementation, screen navigation, and local data persistence using Room. Each lab built progressively on the previous one, contributing to a working understanding of how a complete mobile application is structured and developed. These foundational skills support the design of an app that is functional, user-friendly, and aligned with good design practices.
+</p>
+</div>
+</div>
+</section>
+<section id="labs">
+<h2>Labs</h2>
+<div class="card">
+    <h3>Lab 1 (UI Design)</h3>
+    <p>Introduction to Android UI design using layouts and widgets.</p>
+    <iframe src="https://www.youtube.com/embed/6bE9p_3x1YQ" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab introduced the fundamentals of Android user interface design, covering LinearLayout, ConstraintLayout, and basic widgets. I learned how XML connects with activity code and how attributes control layout structure. This strengthened my foundation in building organized interfaces.</p>
+</div>
+
+<div class="card">
+    <h3>Lab 2 (User Interaction)</h3>
+    <p>Handling user input and event-driven programming.</p>
+    <iframe src="https://www.youtube.com/embed/xha5UOAQtRQ" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab focused on event listeners such as onClickListener and handling EditText input. I learned how to pass data between activities using Intents. It improved my understanding of interactive app behaviour.</p>
+</div>
+
+<div class="card">
+    <h3>Lab 3 (Material Design)</h3>
+    <p>Applying modern UI components and theming.</p>
+    <iframe src="https://www.youtube.com/embed/4HGvQL8ZiY8" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab demonstrated Material Design components like cards and themed buttons. I learned how design systems improve consistency and usability. It gave me a better appreciation of UI/UX principles.</p>
+</div>
+
+<div class="card">
+    <h3>Lab 4 (Navigation)</h3>
+    <p>Fragment navigation using Navigation Component.</p>
+    <iframe src="https://www.youtube.com/embed/yoY5UKvHrXQ" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab introduced navigation graphs and fragment transitions. I learned how structured navigation simplifies multi-screen apps. It improved my understanding of app architecture.</p>
+</div>
+
+<div class="card">
+    <h3>Lab 5 (Room Database)</h3>
+    <p>Local data storage using Room persistence library.</p>
+    <iframe src="https://www.youtube.com/embed/2sYB50s6KwM" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab introduced entities, DAOs, and database classes. I learned how Room simplifies SQL operations with compile-time safety. It helped me understand persistent local storage implementation.</p>
+</div>
+</section>
+<section id="projects">
+<h2>Projects</h2>
+<div class="card">
+    <h3>Project 1 - ECOKITCHEN APP</h3>
+    <p>Problem: Invisible inventory leads to food waste in households.</p>
+    <iframe src="https://www.youtube.com/embed/_jMKvxlzlkg" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This project highlighted the importance of user-centred design and realistic planning. Small deviations in schedule affected project outcomes significantly. It also reinforced the need for clearer role distribution.</p>
+    <a class="github-btn" href="https://github.com/nazihah04/A210066_Dr.Nazatul_Project1.git" target="_blank">View on GitHub</a>
+</div>
+
+<div class="card">
+    <h3>Project 2 - ECOKITCHEN APP (Enhanced)</h3>
+    <p>Problem: Users forget stored food items until expiry.</p>
+    <iframe src="https://www.youtube.com/embed/40GDmqwQLg4" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This project integrated Firebase, Room, ML Kit, CameraX, and APIs. I learned how to combine cloud and local storage effectively. It strengthened my skills in full Android system integration.</p>
+    <a class="github-btn" href="https://github.com/nazihah04/A210066_Nazihah_DrNazatul_Project2.git" target="_blank">View on GitHub</a>
+</div>
+</section>
+<section id="reflection">
+<h2>Reflection & Learning Journey</h2>
+<div class="card">
+<p>
+Developing this application provided deep insights into integrating diverse Android components, specifically bridging local storage with Room and real-time cloud synchronization via Firebase. I learned how to efficiently handle external REST APIs to automate product identification through barcode scanning, which significantly improved user experience. This project highlighted the practical role of technology in achieving SDG 12 by reducing food waste. Overall, it enhanced my proficiency in MVVM architecture and system integration.
+</p>
+</div>
+</section>
+<section id="skills">
+<h2>Skills & Tech Stack</h2>
+<div class="card">
+<p>
+Kotlin, Jetpack Compose, Room Database, Retrofit, Firebase Authentication, Firebase Firestore, ML Kit, CameraX, Coroutines, ViewModel (MVVM), Material 3, Navigation Compose, GSON.
+</p>
+</div>
+</section>
+<section id="resources">
+<h2>Resources</h2>
+<div class="card">
+<p><strong>Libraries & Frameworks:</strong> Jetpack Compose, Room, Retrofit, Firebase Auth & Firestore, ML Kit, CameraX, Coil.</p>
+<p><strong>API:</strong> Open Food Facts API for barcode product data.</p>
+<p><strong>AI Assistance:</strong> Used for debugging, MVVM optimization, and system integration support.</p>
+</div>
+</section>
+<footer>
+<p>NURUL NAZIHAH BINTI ABDUL AZIZ | A210066 | 2026</p>
+</footer>
+</body>
+</html>
