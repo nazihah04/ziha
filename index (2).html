@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>e-Portfolio - SDG12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #BF8B2E;
+  --gold-dark: #8c661f;
+  --ink: #2b2118;
+  --cream: #faf6ee;
+  --sage: #6f8c5a;
+  --line: #e6d9bd;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Work Sans', Arial, sans-serif;
+  line-height: 1.7;
+  background: var(--cream);
+  color: var(--ink);
+}
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; }
+
+/* Header */
+header {
+  position: relative;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #fff;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+header::before, header::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 24px solid rgba(255,255,255,0.08);
+}
+header::before { width: 220px; height: 220px; right: -70px; top: -80px; }
+header::after { width: 160px; height: 160px; left: -50px; bottom: -70px; }
+.header-inner { position: relative; z-index: 1; }
+header h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 600; }
+header .subtitle { margin-top: 0.6rem; font-size: 1.05rem; opacity: 0.95; }
+
+/* Nav */
+nav {
+  position: sticky; top: 0;
+  background: var(--ink);
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 0.25rem; padding: 0.6rem;
+  z-index: 1000;
+}
+nav a {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  color: #f3e9d2;
+  padding: 0.6rem 1.1rem;
+  text-decoration: none;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  transition: 0.25s;
+}
+nav a:hover { background: var(--gold); color: var(--ink); }
+
+/* Layout */
+section { padding: 3.5rem 1.5rem; max-width: 1100px; margin: auto; }
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: 1.75rem;
+  display: flex; align-items: center; gap: 0.65rem;
+}
+h2::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); flex: none; }
+
+.card { background: #fff; border-radius: 14px; padding: 1.6rem; margin-bottom: 1.5rem; box-shadow: 0 4px 14px rgba(43,33,24,0.07); }
+.card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+iframe { width: 100%; height: 315px; border-radius: 10px; margin-top: 1rem; border: none; box-shadow: 0 2px 10px rgba(43,33,24,0.08); }
+
+/* Home / intro */
+.intro-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1.5rem; align-items: start; }
+.info-card { border-left: 4px solid var(--gold); }
+.info-card .badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem; border-radius: 50%;
+  background: var(--gold); color: #fff;
+  font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.profile-photo {
+  width: 110px; height: 110px; border-radius: 50%;
+  object-fit: cover; border: 4px solid var(--gold);
+  display: block; margin-bottom: 1rem;
+}
+.info-card p { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.info-card p:last-of-type { border-bottom: none; }
+.info-card strong {
+  font-family: 'Space Mono', monospace; font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-dark);
+  font-weight: 700; white-space: nowrap;
+}
+.intro-card { border-top: 4px solid var(--gold); }
+.intro-card .eyebrow-small {
+  font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--gold-dark); display: block; margin-bottom: 0.6rem;
+}
+@media (max-width: 800px) { .intro-grid { grid-template-columns: 1fr; } }
+
+/* Labs timeline */
+.timeline { position: relative; padding-left: 3.5rem; }
+.timeline::before { content: ''; position: absolute; left: 1.45rem; top: 0.5rem; bottom: 0.5rem; width: 2px; background: var(--line); }
+.lab-card { position: relative; }
+.lab-number {
+  position: absolute; left: -3.5rem; top: 1.5rem;
+  width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  background: var(--gold); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Mono', monospace; font-weight: 700; font-size: 0.95rem;
+  box-shadow: 0 0 0 6px var(--cream);
+}
+
+/* Projects */
+.project-card { border-top: 4px solid var(--gold); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(43,33,24,0.12); }
+.github-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  margin-top: 1rem; padding: 0.65rem 1.25rem;
+  background: var(--ink); color: #f3e9d2;
+  border-radius: 999px; text-decoration: none;
+  font-family: 'Space Mono', monospace; font-size: 0.85rem;
+  transition: 0.25s;
+}
+.github-btn:hover { background: var(--gold); color: var(--ink); }
+
+/* Reflection */
+.reflection-card { border-left: 4px solid var(--sage); font-size: 1.05rem; }
+
+/* Skills */
+.skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.skill-pill {
+  font-family: 'Space Mono', monospace; font-size: 0.82rem;
+  padding: 0.5rem 1rem; background: #faf3e3;
+  border: 1px solid var(--line); border-radius: 999px; color: var(--gold-dark);
+}
+
+/* Resources */
+.resource-item { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+.resource-item:last-child { border-bottom: none; }
+.resource-item .label {
+  font-family: 'Space Mono', monospace; font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-dark);
+  min-width: 130px; padding-top: 0.2rem; flex: none; font-weight: 700;
+}
+
+/* Tag */
+.tag {
+  display: inline-block; padding: 0.35rem 0.9rem;
+  background: var(--gold); color: #fff;
+  border-radius: 999px; margin-top: 0.75rem;
+  font-family: 'Space Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em;
+}
+
+footer {
+  text-align: center; padding: 2rem;
+  background: var(--ink); color: #f3e9d2;
+  margin-top: 1rem;
+  font-family: 'Space Mono', monospace; font-size: 0.82rem; letter-spacing: 0.05em;
+  border-top: 4px solid var(--gold);
+}
+
+@media (max-width: 480px) {
+  section { padding: 2.5rem 1rem; }
+  .timeline { padding-left: 2.6rem; }
+  .timeline::before { left: 1.1rem; }
+  .lab-number { left: -2.6rem; width: 2.2rem; height: 2.2rem; font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+<header id="home">
+<div class="header-inner">
+<h1>e-Portfolio</h1>
+<p class="subtitle">Software Engineering | SDG 12 - Responsible Consumption & Production</p>
+</div>
+</header>
+<nav>
+<a href="#home">Home</a>
+<a href="#labs">Labs</a>
+<a href="#projects">Projects</a>
+<a href="#reflection">Reflection</a>
+<a href="#skills">Skills</a>
+<a href="#resources">Resources</a>
+</nav>
+<section id="home">
+<div class="intro-grid">
+<div class="card info-card">
+<!-- To add your own photo: replace the line below with
+     <img src="your-photo.jpg" alt="Profile photo" class="profile-photo">
+     and upload your-photo.jpg to the same GitHub folder as index.html -->
+<span class="badge">12</span>
+<p><strong>Name</strong><span>NURUL NAZIHAH BINTI ABDUL AZIZ</span></p>
+<p><strong>Matric No</strong><span>A210066</span></p>
+<p><strong>Programme</strong><span>SOFTWARE ENGINEERING</span></p>
+<p><strong>Instructor</strong><span>DR. NAZATUL AINI</span></p>
+<span class="tag">SDG 12 : Responsible Consumption And Production</span>
+</div>
+<div class="card intro-card">
+<span class="eyebrow-small">Introduction</span>
+<p>
+    This report documents the completion of five Android application development labs, covering essential concepts such as user interface design, user interaction, Material Design implementation, screen navigation, and local data persistence using Room. Each lab built progressively on the previous one, contributing to a working understanding of how a complete mobile application is structured and developed. These foundational skills support the design of an app that is functional, user-friendly, and aligned with good design practices.
+</p>
+</div>
+</div>
+</section>
+<section id="labs">
+<h2>Labs</h2>
+<div class="timeline">
+<div class="card lab-card">
+    <span class="lab-number">01</span>
+    <h3>Lab 1 (UI Design)</h3>
+    <p>Introduction to Android UI design using layouts and widgets.</p>
+    <iframe src="https://www.youtube.com/embed/6bE9p_3x1YQ" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab introduced the fundamentals of Android user interface design, covering LinearLayout, ConstraintLayout, and basic widgets. I learned how XML connects with activity code and how attributes control layout structure. This strengthened my foundation in building organized interfaces.</p>
+</div>
+
+<div class="card lab-card">
+    <span class="lab-number">02</span>
+    <h3>Lab 2 (User Interaction)</h3>
+    <p>Handling user input and event-driven programming.</p>
+    <iframe src="https://www.youtube.com/embed/xha5UOAQtRQ" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab focused on event listeners such as onClickListener and handling EditText input. I learned how to pass data between activities using Intents. It improved my understanding of interactive app behaviour.</p>
+</div>
+
+<div class="card lab-card">
+    <span class="lab-number">03</span>
+    <h3>Lab 3 (Material Design)</h3>
+    <p>Applying modern UI components and theming.</p>
+    <iframe src="https://www.youtube.com/embed/4HGvQL8ZiY8" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab demonstrated Material Design components like cards and themed buttons. I learned how design systems improve consistency and usability. It gave me a better appreciation of UI/UX principles.</p>
+</div>
+
+<div class="card lab-card">
+    <span class="lab-number">04</span>
+    <h3>Lab 4 (Navigation)</h3>
+    <p>Fragment navigation using Navigation Component.</p>
+    <iframe src="https://www.youtube.com/embed/yoY5UKvHrXQ" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab introduced navigation graphs and fragment transitions. I learned how structured navigation simplifies multi-screen apps. It improved my understanding of app architecture.</p>
+</div>
+
+<div class="card lab-card">
+    <span class="lab-number">05</span>
+    <h3>Lab 5 (Room Database)</h3>
+    <p>Local data storage using Room persistence library.</p>
+    <iframe src="https://www.youtube.com/embed/2sYB50s6KwM" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This lab introduced entities, DAOs, and database classes. I learned how Room simplifies SQL operations with compile-time safety. It helped me understand persistent local storage implementation.</p>
+</div>
+</div>
+</section>
+<section id="projects">
+<h2>Projects</h2>
+<div class="card project-card">
+    <h3>Project 1 - ECOKITCHEN APP</h3>
+    <p>Problem: Invisible inventory leads to food waste in households.</p>
+    <iframe src="https://www.youtube.com/embed/_jMKvxlzlkg" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This project highlighted the importance of user-centred design and realistic planning. Small deviations in schedule affected project outcomes significantly. It also reinforced the need for clearer role distribution.</p>
+    <a class="github-btn" href="https://github.com/nazihah04/A210066_Dr.Nazatul_Project1.git" target="_blank">View on GitHub</a>
+</div>
+
+<div class="card project-card">
+    <h3>Project 2 - ECOKITCHEN APP (Enhanced)</h3>
+    <p>Problem: Users forget stored food items until expiry.</p>
+    <iframe src="https://www.youtube.com/embed/40GDmqwQLg4" allowfullscreen></iframe>
+    <p><strong>Reflection:</strong> This project integrated Firebase, Room, ML Kit, CameraX, and APIs. I learned how to combine cloud and local storage effectively. It strengthened my skills in full Android system integration.</p>
+    <a class="github-btn" href="https://github.com/nazihah04/A210066_Nazihah_DrNazatul_Project2.git" target="_blank">View on GitHub</a>
+</div>
+</section>
+<section id="reflection">
+<h2>Reflection & Learning Journey</h2>
+<div class="card reflection-card">
+<p>
+Developing this application provided deep insights into integrating diverse Android components, specifically bridging local storage with Room and real-time cloud synchronization via Firebase. I learned how to efficiently handle external REST APIs to automate product identification through barcode scanning, which significantly improved user experience. This project highlighted the practical role of technology in achieving SDG 12 by reducing food waste. Overall, it enhanced my proficiency in MVVM architecture and system integration.
+</p>
+</div>
+</section>
+<section id="skills">
+<h2>Skills & Tech Stack</h2>
+<div class="card">
+<div class="skills-grid">
+<span class="skill-pill">Kotlin</span>
+<span class="skill-pill">Jetpack Compose</span>
+<span class="skill-pill">Room Database</span>
+<span class="skill-pill">Retrofit</span>
+<span class="skill-pill">Firebase Authentication</span>
+<span class="skill-pill">Firebase Firestore</span>
+<span class="skill-pill">ML Kit</span>
+<span class="skill-pill">CameraX</span>
+<span class="skill-pill">Coroutines</span>
+<span class="skill-pill">ViewModel (MVVM)</span>
+<span class="skill-pill">Material 3</span>
+<span class="skill-pill">Navigation Compose</span>
+<span class="skill-pill">GSON</span>
+</div>
+</div>
+</section>
+<section id="resources">
+<h2>Resources</h2>
+<div class="card">
+<div class="resource-item"><span class="label">Libraries</span><span>Jetpack Compose, Room, Retrofit, Firebase Auth & Firestore, ML Kit, CameraX, Coil.</span></div>
+<div class="resource-item"><span class="label">API</span><span>Open Food Facts API for barcode product data.</span></div>
+<div class="resource-item"><span class="label">AI Assistance</span><span>Used for debugging, MVVM optimization, and system integration support.</span></div>
+</div>
+</section>
+<footer>
+<p>NURUL NAZIHAH BINTI ABDUL AZIZ | A210066 | 2026</p>
+</footer>
+</body>
+</html>
